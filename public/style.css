@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.img1 {
+  border-radius: 25%;
+  width: 2.5rem;
+}
+.brand {
+  font-size: 1.2rem;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+body {
+  background-color: #e9ecef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: auto;
+  font-family: Forum;
+}
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #e9ecef;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #e9ecef;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
