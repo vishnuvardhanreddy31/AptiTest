@@ -1,4 +1,5 @@
 // Import the functions you need from the SDKs you need
+// version 0.0.5
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
 import {
