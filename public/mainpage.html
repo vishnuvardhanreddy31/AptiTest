@@ -56,7 +56,7 @@
           <li class="nav-item">
             <a href="contactus.html" class="nav-link hover-underline-animation">Contact Us</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="main.html" class="nav-link hover-underline-animation">Servicebased Companies</a>
           </li>
           <li class="nav-item">
@@ -64,61 +64,96 @@
           </li>
           <li class="nav-item">
             <a href="main3.html" class="nav-link hover-underline-animation">Interview Guidance</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <span class="nav-link hover-underline-animation " id="username"></span>
           </li>
           <li class="nav-item">
-            <a href="" class="nav-link hover-underline-animation" id="logout">Log Out</a>
+            <a href="" class="nav-link hover-underline-animation text-danger" id="logout">Log Out</a>
           </li>
 
         </ul>
       </div>
     </div>
   </nav>
-  <div class="container-fluid ">
+  <div class="container my-5">
+    <p class="lead display-5">Welcome to Aptitest, your goal-to destination for company-specific question papers and
+      resources to
+      help you
+      prepare for your dream job. Here's how to get started</p>
+    <section class="mt-1">
+      <!-- service based companies -->
+      <div class="card mb-3" style="max-width:540px;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="./images/servicebased.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body mx-auto">
+              <h3 class="card-title text-success-emphasis">
+                Service Based Companies
+              </h3>
+              <a href="main.html"> <button class="btn btn-primary mt-3">Get Started</button></a>
 
-
-
-    <div class="main container">
-      <div class="card mx-auto mt-5 shadow mb-5" style="width:100%;">
-        <img src="./images/contact.jpg" alt="" class="w-100 h-100">
-
-
-        <div class="card-body">
-          <h1>contact developer</h1>
-          <a href="mailto:vishnuvardhan.goli531@gmail.com"> <button class="btn btn-primary">click here</button></a>
-
-        </div>
-
-      </div>
-    </div>
-    <!-- <section class="container">
-      <div class="card mx-auto mt-5 shadow" style="width:50rem;">
-        <img src="./images/vishnu.jpeg" alt="" class="w-100">
-
-        <div class="card-body">
-          <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#profile1">View Profile</button>
-          <div class="collapse" id="profile1">
-            <h2>Vishnuvardhan Reddy Goli</h2>
-            <h2 style="color:blue">Undergraduate Student </h2>
-            <h4 class="text-start" style="color: blueviolet;">Bio:</h4>
-            <p class="lead1 text-start">"I'm an Undergraduate student pursuing a degree in Electronics and Communication
-              Engineering
-              with a minor in Artificial Intelligence and Machine Learning.My interest in technology and creativity has
-              led me to explore web development.I enjoy creating websites that are not only visually appealing but also
-              highly
-              functional and optimized for a seamless user experience"</p>
-            <h4 class="text-start" style="color: blueviolet;">Work Experience:</h4>
-            <p class="lead1 text-secondary text-sm-start">
-              Python Automation Developer Intern, Cantellat Software Pvt Ltd.
-            </p>
+            </div>
           </div>
         </div>
       </div>
-    </section> -->
+      <!-- product based companies -->
+      <div class="card mb-3" style="max-width:540px;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="./images/productbased.jpg" class="img-fluid rounded-start w-100 h-100" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body mx-auto">
+              <h3 class="card-title text-success-emphasis">
+                Product Based Companies
+              </h3>
+              <a href="main2.html"> <button class="btn btn-primary mt-3">Get Started</button></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- complete interview guidance -->
+      <div class="card mb-3" style="max-width:540px;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="./images/interview.jpg" class="img-fluid rounded-start w-100 h-100" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body mx-auto">
+              <h3 class="card-title text-success-emphasis">
+                Complete Interview Guidance Material
+              </h3>
+              <a href="main3.html"> <button class="btn btn-primary mt-3">Get Started</button></a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 45 Days of Learning python -->
+      <!-- <div class="card mb-3" style="max-width:540px;">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <img src="./images/learning challenge python.png" class="img-fluid rounded-start w-100 h-100" alt="...">
+          </div>
+          <div class="col-md-6">
+            <div class="card-body mx-auto">
+              <h3 class="card-title text-success-emphasis">
+                45 Days Of Learning challenge - Python
+              </h3>
+              <a href="main4.html"> <button class="btn btn-primary mt-3">Get Started</button></a>
+
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </section>
 
   </div>
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
@@ -159,6 +194,14 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
+  <script src="script.js"></script>
+  <script>
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (!user) {
+        window.location.href("index.html");
+      }
+    });
+  </script>
   <!-- logout code -->
   <script type="module">
     // Import the functions you need from the SDKs you need

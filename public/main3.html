@@ -48,7 +48,7 @@
         <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
-            <a href="index.html" class="nav-link hover-underline-animation">Home</a>
+            <a href="mainpage.html" class="nav-link hover-underline-animation">Home</a>
           </li>
           <li class="nav-item">
             <a href="aboutus.html" class="nav-link hover-underline-animation">About us</a>
@@ -65,7 +65,12 @@
           <li class="nav-item">
             <a href="main3.html" class="nav-link hover-underline-animation">Interview Guidance</a>
           </li>
-
+          <li class="nav-item">
+            <span class="nav-link hover-underline-animation " id="username"></span>
+          </li>
+          <li class="nav-item">
+            <a href="" class="nav-link hover-underline-animation" id="logout">Log Out</a>
+          </li>
 
         </ul>
       </div>
@@ -171,7 +176,7 @@
 
       <span class="text-muted">© AptiTest 2023</span>
     </div>
-    <span class="text-muted">Version 0.0.4</span>
+    <span class="text-muted">Version 0.0.5</span>
     <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
       <li class="ms-3"><a class="text-muted" href="/"><svg class="bi" width="24" height="24">
             <use xlink:href="#twitter"></use>
@@ -198,6 +203,90 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
+  <!-- logout code -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+    import {
+      getDatabase,
+      set,
+      ref,
+      update,
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      GoogleAuthProvider,
+      signOut,
+      signInWithPopup,
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdAo7h2gVigdL0NYkK2hcKEYI7UjTYbtY",
+      authDomain: "aptitest-4fa07.firebaseapp.com",
+      databaseURL: "https://aptitest-4fa07-default-rtdb.firebaseio.com",
+      projectId: "aptitest-4fa07",
+      storageBucket: "aptitest-4fa07.appspot.com",
+      messagingSenderId: "555439862885",
+      appId: "1:555439862885:web:bf54ae8dc265d5bc99428c",
+      measurementId: "G-W8XFYM79Y8",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    logout.addEventListener("click", (e) => {
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          alert("Logout successfull");
+          window.location.href = "index.html";
+
+        })
+        .catch((error) => {
+          // An error happened.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    });
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        const Name = user.displayName;
+        const email = user.email;
+        var name = document.getElementById("username");
+        // console.log(Name);
+        // console.log(email);
+
+        if (Name != null) {
+          name.textContent = Name;
+        }
+        else {
+          name.textContent = email;
+        }
+
+
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        window.location.href = "index.html";
+      }
+    });
+  </script>
 </body>
 
 </html>
