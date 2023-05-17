@@ -11,6 +11,7 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Forum" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -134,7 +135,9 @@
     })();
   </script>
   <!--End of Tawk.to Script-->
-
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.js"></script>
+  <!-- sweet alert -->
   <!-- logout code -->
   <script type="module">
     // Import the functions you need from the SDKs you need
@@ -181,7 +184,14 @@
       signOut(auth)
         .then(() => {
           // Sign-out successful.
-          alert("Logout successfull");
+          //alert("Logout successfull");          
+          Swal.fire({
+            title: "AptiTest",
+            text: "Logout successfull",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+
           window.location.href = "index.html";
 
         })
@@ -189,7 +199,13 @@
           // An error happened.
           const errorCode = error.code;
           const errorMessage = error.message;
-          alert(errorMessage);
+          //alert(errorMessage);
+          Swal.fire({
+            title: "AptiTest",
+            text: errorMessage,
+            icon: "error",
+            confirmButtonText: "OK",
+          });
         });
     });
     onAuthStateChanged(auth, (user) => {

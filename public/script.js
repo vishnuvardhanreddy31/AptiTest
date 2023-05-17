@@ -48,19 +48,31 @@ signup.addEventListener("click", (e) => {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      set(ref(database, "users/" + user.uid), {
+      set(ref(database, "userswithemail/" + user.uid), {
         username: username,
         email: email,
         password: password,
       });
-      alert("user created");
+
+      Swal.fire({
+        title: "AptiTest",
+        text: "User Created",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
       // ...
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
 
-      alert(errorMessage);
+      // alert(errorMessage);
+      Swal.fire({
+        title: "AptiTest",
+        text: errorMessage,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
       // ..
     });
 });
@@ -76,7 +88,13 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // User is signed out
     // ...
-    window.alert("Please login");
+    // window.alert("Please login");
+    Swal.fire({
+      title: "AptiTest",
+      text: "Please Login",
+      icon: "warning",
+      confirmButtonText: "OK",
+    });
     // window.location.href = "index.html";
   }
 });
@@ -92,18 +110,30 @@ login.addEventListener(
         // Signed in
         const user = userCredential.user;
         const dt = new Date();
-        update(ref(database, "users/" + user.uid), {
+        update(ref(database, "userswithemail/" + user.uid), {
           last_login: dt,
         });
 
-        alert("user login successfull");
+        // alert("user login successfull");
+        Swal.fire({
+          title: "AptiTest",
+          text: "User login successfull",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
         window.location.href = "mainpage.html";
         // ...
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        // alert(errorMessage);
+        Swal.fire({
+          title: "AptiTest",
+          text: errorMessage,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       });
   },
   { remember: "local" }
@@ -119,18 +149,30 @@ loginWithGoogle.addEventListener(
         // Signed in with Google
         const user = result.user;
         const dt = new Date();
-        set(ref(database, "users/" + user.uid), {
+        set(ref(database, "userswithemail/" + user.uid), {
           username: user.displayName,
           email: user.email,
           last_login: dt,
         });
-        alert("user login successful");
+        // alert("user login successful");
+        Swal.fire({
+          title: "AptiTest",
+          text: "User login successfull",
+          icon: "success",
+          confirmButtonText: "OK",
+        });
         window.location.href = "mainpage.html";
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        alert(errorMessage);
+        // alert(errorMessage);
+        Swal.fire({
+          title: "AptiTest",
+          text: errorMessage,
+          icon: "error",
+          confirmButtonText: "OK",
+        });
       });
   },
   { remember: "local" }
@@ -150,14 +192,14 @@ loginWithGoogle.addEventListener(
 //     });
 // });
 
-const user1 = auth.currentUser;
+// const user1 = auth.currentUser;
 
-if (user1 !== null) {
-  user1.providerData.forEach((profile) => {
-    console.log("Sign-in provider: " + profile.providerId);
-    console.log("  Provider-specific UID: " + profile.uid);
-    console.log("  Name: " + profile.displayName);
-    console.log("  Email: " + profile.email);
-    console.log("  Photo URL: " + profile.photoURL);
-  });
-}
+// if (user1 !== null) {
+//   user1.providerData.forEach((profile) => {
+//     console.log("Sign-in provider: " + profile.providerId);
+//     console.log("  Provider-specific UID: " + profile.uid);
+//     console.log("  Name: " + profile.displayName);
+//     console.log("  Email: " + profile.email);
+//     console.log("  Photo URL: " + profile.photoURL);
+//   });
+// }
