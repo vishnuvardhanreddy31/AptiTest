@@ -267,10 +267,11 @@
           // An error happened.
           const errorCode = error.code;
           const errorMessage = error.message;
+          var error = errorMessage.split("Firebase:")[1].trim();
           //alert(errorMessage);
           Swal.fire({
             title: "AptiTest",
-            text: errorMessage,
+            text: error,
             icon: "error",
             confirmButtonText: "OK",
           });

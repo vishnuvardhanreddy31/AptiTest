@@ -59,13 +59,26 @@ forpass.addEventListener("click", (e) => {
     .then(() => {
       // Password reset email sent!
       // ..
-      window.alert("Email has been sent to you,please check and verify it.");
+      window.Swal.fire({
+        title: "AptiTest",
+        text: "Email has been sent to you,please check and verify it.",
+        icon: "warning",
+        confirmButtonText: "OK",
+      });
+      //window.alert("Email has been sent to you,please check and verify it.");
       window.location.href = "index.html";
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // ..
-      window.alert("Message: " + errorMessage);
+      var error = errorMessage.split("Firebase:")[1].trim();
+      //
+      Swal.fire({
+        title: "AptiTest",
+        text: error,
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      //window.alert("Message: " + errorMessage);
     });
 });

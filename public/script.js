@@ -65,11 +65,12 @@ signup.addEventListener("click", (e) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      var error = errorMessage.split(" ")[1];
 
       // alert(errorMessage);
       Swal.fire({
         title: "AptiTest",
-        text: errorMessage,
+        text: error,
         icon: "error",
         confirmButtonText: "OK",
       });
@@ -127,10 +128,11 @@ login.addEventListener(
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        var error = errorMessage.split("Firebase:")[1].trim();
         // alert(errorMessage);
         Swal.fire({
           title: "AptiTest",
-          text: errorMessage,
+          text: error,
           icon: "error",
           confirmButtonText: "OK",
         });
@@ -166,10 +168,11 @@ loginWithGoogle.addEventListener(
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        var error = errorMessage.split("Firebase:")[1].trim();
         // alert(errorMessage);
         Swal.fire({
           title: "AptiTest",
-          text: errorMessage,
+          text: error,
           icon: "error",
           confirmButtonText: "OK",
         });

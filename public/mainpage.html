@@ -135,7 +135,7 @@
         </div>
       </div>
       <!-- 45 Days of Learning python -->
-      <!-- <div class="card mb-3" style="max-width:540px;">
+      <div class="card mb-3" style="max-width:540px;">
         <div class="row g-0">
           <div class="col-md-6">
             <img src="./images/learning challenge python.png" class="img-fluid rounded-start w-100 h-100" alt="...">
@@ -150,7 +150,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
     </section>
 
   </div>
@@ -266,10 +266,11 @@
           // An error happened.
           const errorCode = error.code;
           const errorMessage = error.message;
+          var error = errorMessage.split("Firebase:")[1].trim();
           //alert(errorMessage);
           Swal.fire({
             title: "AptiTest",
-            text: errorMessage,
+            text: error,
             icon: "error",
             confirmButtonText: "OK",
           });

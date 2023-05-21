@@ -87,8 +87,9 @@
         </div>
       </div>
     </div>
+    <!-- <h1>Inspired From MCM instagram Page</h1> -->
     <section class="d-flex  justify-content-center">
-
+      <!-- <h1 class="display-2">Coming Soon</h1> -->
 
       <!--day 1  -->
       <section class="container">
@@ -115,10 +116,9 @@
         </div>
       </section>
       <!-- day 2 -->
-      <!-- <section class="container">
-
+      <section class="container">
         <div class="card mx-auto mt-5 shadow" style="width:50rem;">
-          <img src="./images/learning/python/day-1/day1.png" alt="" class="w-100">
+          <img src="./images/learning/python/day-2/day 2.png" alt="" class="w-100">
 
           <div class="card-body">
             <button class="btn btn-primary w-25" data-bs-toggle="collapse" data-bs-target="#day2">View</button>
@@ -137,7 +137,7 @@
             </div>
           </div>
         </div>
-      </section> -->
+      </section>
       <!-- day -3 -->
       <!-- <section class="container">
 
@@ -268,10 +268,11 @@
           // An error happened.
           const errorCode = error.code;
           const errorMessage = error.message;
+          var error = errorMessage.split("Firebase:")[1].trim();
           //alert(errorMessage);
           Swal.fire({
             title: "AptiTest",
-            text: errorMessage,
+            text: error,
             icon: "error",
             confirmButtonText: "OK",
           });
