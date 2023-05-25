@@ -53,13 +53,14 @@ signup.addEventListener("click", (e) => {
         email: email,
         password: password,
       });
+      window.alert("User Created");
 
-      Swal.fire({
-        title: "AptiTest",
-        text: "User Created",
-        icon: "success",
-        confirmButtonText: "OK",
-      });
+      // Swal.fire({
+      //   title: "AptiTest",
+      //   text: "User Created",
+      //   icon: "success",
+      //   confirmButtonText: "OK",
+      // });
       // ...
     })
     .catch((error) => {
@@ -67,13 +68,13 @@ signup.addEventListener("click", (e) => {
       const errorMessage = error.message;
       var error = errorMessage.split(" ")[1];
 
-      // alert(errorMessage);
-      Swal.fire({
-        title: "AptiTest",
-        text: error,
-        icon: "error",
-        confirmButtonText: "OK",
-      });
+      alert(errorMessage);
+      // Swal.fire({
+      //   title: "AptiTest",
+      //   text: error,
+      //   icon: "error",
+      //   confirmButtonText: "OK",
+      // });
       // ..
     });
 });
