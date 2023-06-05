@@ -67,17 +67,46 @@
             <a href="main3.html" class="nav-link hover-underline-animation">Interview Guidance</a>
           </li> -->
           <li class="nav-item">
-            <span class="nav-link hover-underline-animation" id="username"></span>
+            <a id="car" class="nav-link hover-underline-animation" data-bs-toggle="modal" data-bs-target="#m">View
+              profile</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a href="" class="nav-link hover-underline-animation text-danger" id="logout">Log Out</a>
-          </li>
+          </li> -->
         </ul>
       </div>
     </div>
   </nav>
   <div class="container-fluid ">
-
+    <div class="modal fade" id="m" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bgr text-white">
+          <div class="modal-header text-center">
+            <h1 class="text-center text-2">Profile Information</h1>
+            <button class="btn-close btn-danger" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-4 d-flex align-items-center">
+                <!-- <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz461kTMfA7V0q5766oAtm_rDvL6fhZFTkpcfQh6x3Vg&usqp=CAU&ec=48665701"
+                  alt="" class="w-100 shadow rounded"> -->
+                <img id="profile-image" src="" alt="" class="w-100 shadow rounded">
+              </div>
+              <div class="col-sm-8">
+                <h1 style="font-size: 1.6rem;">Name/Email</h1>
+                <p class="text-white" style="font-size: 1.5rem;"><span class="text-white" id="username"></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
+            <button class="btn btn-danger"> <a href="" class="nav-link hover-underline-animation text-white"
+                id="logout">Log Out</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="main container">
       <div class="card mx-auto mt-5 shadow mb-5" style="width:80%;">
         <img src="./images/interview.jpg" alt="" class="w-100 h-100">
@@ -284,6 +313,14 @@
         const Name = user.displayName;
         const email = user.email;
         var name = document.getElementById("username");
+        const profileImageURL = user.photoURL;
+        var profileImageElement = document.getElementById("profile-image");
+        if (profileImageURL != null) {
+          profileImageElement.src = profileImageURL;
+        }
+        else {
+          profileImageElement.src = "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=";
+        }
         // console.log(Name);
         // console.log(email);
 
