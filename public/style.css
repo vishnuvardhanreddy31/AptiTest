@@ -53,7 +53,7 @@ body {
 .video-container {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   padding-top: 56.25%; /* 16:9 aspect ratio, adjust as needed */
 }
@@ -170,4 +170,54 @@ body {
 .img-responsive {
   max-width: 100%;
   height: auto;
+}
+
+/* profile aboutus page */
+
+.profile-layout {
+  height: 520px;
+  width: 320px;
+  /* border: 2px solid black; */
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+  background-color: rgb(213, 213, 234);
+  border-radius: 30px;
+  box-shadow: 2px 3px 9px black;
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.profile {
+  height: 100px;
+  width: 100px;
+  border-radius: 70%;
+}
+.social {
+  height: 50px;
+  width: 50px;
+  top: -25px;
+  right: 20px;
+  position: absolute;
+  border-radius: 50%;
+}
+.social1 {
+  height: 50px;
+  width: 50px;
+  bottom: -25px;
+  right: 140px;
+  position: absolute;
+  border-radius: 20%;
+}
+
+.profile-layout h1 {
+  color: blueviolet;
+}
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
 }
