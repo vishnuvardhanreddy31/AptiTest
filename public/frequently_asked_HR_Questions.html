@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AptiTest</title>
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/footers/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Forum" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="frequently_css.css">
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="bootstrap" viewBox="0 0 118 94">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z">
+      </path>
+    </symbol>
+    <symbol id="facebook" viewBox="0 0 16 16">
+      <path
+        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z">
+      </path>
+    </symbol>
+    <symbol id="instagram" viewBox="0 0 16 16">
+      <path
+        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+      </path>
+    </symbol>
+    <symbol id="twitter" viewBox="0 0 16 16">
+      <path
+        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+      </path>
+    </symbol>
+  </svg>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand">
+        <img src="./images/aptitestlogo.jpg" alt="" class="shadow-sm img1" />
+        <h1 class="d-inline mx-2 brand">AptiTest</h1>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a href="mainpage.html" class="nav-link hover-underline-animation">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="aboutus.html" class="nav-link hover-underline-animation">About us</a>
+          </li>
+          <li class="nav-item">
+            <a href="contactus.html" class="nav-link hover-underline-animation">Contact Us</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="main.html" class="nav-link hover-underline-animation">Servicebased Companies</a>
+          </li>
+          <li class="nav-item">
+            <a href="main2.html" class="nav-link hover-underline-animation">Productbased Companies</a>
+          </li>
+          <li class="nav-item">
+            <a href="main3.html" class="nav-link hover-underline-animation">Interview Guidance</a>
+          </li> -->
+          <li class="nav-item">
+            <a id="car" class="nav-link hover-underline-animation" data-bs-toggle="modal" data-bs-target="#m">View
+              profile</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a href="" class="nav-link hover-underline-animation text-danger" id="logout">Log Out</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid ">
+
+    <div class="modal fade" id="m" data-bs-backdrop="static">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bgr text-white">
+          <div class="modal-header text-center">
+            <h1 class="text-center text-2">Profile Information</h1>
+            <button class="btn-close btn-danger" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-sm-4 d-flex align-items-center">
+                <!-- <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz461kTMfA7V0q5766oAtm_rDvL6fhZFTkpcfQh6x3Vg&usqp=CAU&ec=48665701"
+                  alt="" class="w-100 shadow rounded"> -->
+                <img id="profile-image" src="" alt="" class="w-100 shadow rounded">
+              </div>
+              <div class="col-sm-8">
+                <h1 style="font-size: 1.6rem;">Name/Email</h1>
+                <p class="text-white" style="font-size: 1.5rem;"><span class="text-white" id="username"></span></p>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p class="quote">"The only way to do great work is to love what you do." - Steve Jobs</p>
+            <button class="btn btn-danger"> <a href="" class="nav-link hover-underline-animation text-white"
+                id="logout">Log Out</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main container">
+
+
+      <div id="faq" class="faq-body">
+        <div class="faq-header">
+          <h1 class="faq-title">Top 30 HR Interview Questions </h1>
+          <div class="seperator"></div>
+        </div>
+        <div class="faq-list">
+          <div>
+            <details open>
+              <summary title="Tell me a little about yourself">Tell me a little about yourself</summary>
+              <p class="faq-content">
+                Answer:<br>
+                First of all, I would like to thank you and ____________ (company) for giving me this opportunity to
+                present myself in front of you and accept my candidature.
+                Coming to myself, As you know my name is _________, which means __________. I have humble beginnings
+                from _______ (town/city) and grew up understanding the importance of working hard. My father was a
+                ____________ and always taught me different lessons about the true nature of goodwill and hard work.
+                I began showing interest in _________ (sales/marketing/etc) during my school years. Studying _______
+                opened my world to the immense possibilities in this field, and I immediately got excited to finish my
+                schooling and enter this work.
+                Apart from this, I have a special interest in __________ (hobby) and have successfully participated in
+                various competitions where I have shown my talent. My interest in sports manifested in me playing
+                ________ (football/cricket) throughout my childhood and am an avid supporter of _______ (sports team)
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Why should we hire you?">Why should we hire you?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Sir/Ma’am, as you must have figured from my resumé that I am a fresher in this line of work. However, I
+                believe this puts me at an advantage as I will bring to your company the urge and the dedication to
+                learn new things and put them to use. I may not possess the practical knowledge in this field. However,
+                throughout college, I persisted in learning in-depth about the topics and developed a deep theoretical
+                understanding of important topics used in this field.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What are your strengths and weaknesses?">What are your strengths and weaknesses?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                <strong>Strengths:</strong><br>
+                1. I am a good communicator who has helped me take on leadership roles in my college.<br>
+                2. I am a keen observer acutely aware of people’s problems and their strengths.<br>
+                3. I flourish when I work with a team that is given a particular task to be done within a specified
+                period.<br>
+                4. I am a quick learner and go out of my way to ask questions to better my understanding.<br>
+                5. I try always to be a positive influence on people and spread joy around me.<br>
+                <br>
+                <strong>Weaknesses:</strong><br>
+                1. I am a perfectionist and am obsessed with attention to detail. This sometimes derails me off the
+                project as I begin to address small issues within the projects minutely.<br>
+                2. To grow fast in my career, I take on more responsibilities than I can handle.<br>
+                3. I thrive on feedback on my performance. If I don’t receive them, I sometimes miss my mark and get
+                drifted in the way I’ve been working.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Why do you want to work at our company?">Why do you want to work at our company?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I have always looked upon your company as the pinnacle of innovation. Your recent strides in the market
+                have proved to be a major success, and I can’t think of any other company where I could develop my
+                initial skills, which will help me in the long run.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What are your goals and aspirations in life?">What are your goals and aspirations in life?
+              </summary>
+              <p class="faq-content">
+                Answer:<br>
+                Currently, my short-term goal is to nail this interview and get placed in a reputed company like yours,
+                and my long-term goals are to climb up the ladder and see myself as a respectable executive within the
+                company.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Do you think you are overqualified for this position?">Do you think you are overqualified
+                for this position?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Yes, I do believe I am overqualified. However, I always think that there is always something to learn
+                everywhere. And I see a lot of exposure that I can gain for my development with your organization. So, I
+                do not mind taking a low job to learn more.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What motivated you to do your job well?">What motivated you to do your job well?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I am always motivated to do a task to the best abilities. My father had told me at a young age that
+                whenever you do a task with your name attached to it, you must do it with 200% of your dedication
+                because it might continue to live longer than you. You must do it to your best abilities for it to be
+                memorable.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Who is your inspiration?">Who is your inspiration?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                While there are countless individuals that I have met in my life who can be a source of inspiration for
+                me- from my teachers to my parents however the biggest inspiration I get is from myself. You see, I try
+                to picture myself in 10 years and create an image of my life there and work tirelessly to reach that
+                image. However, I have already constructed another image for myself as I reach that image, which is ten
+                years away. So, I always try to achieve higher than what I have made for myself and that picture of me
+                in 10 years keeps me motivated.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Define success">Define success</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Success for me is a journey that is full of obstacles. These obstacles come in the form of learnings
+                which I turn into springboards during my run to the finish line. But I believe that if today is better
+                than yesterday, I have succeeded in my work and life.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What was the toughest decision you’ve had to make?">What was the toughest decision you’ve
+                had to make?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Tough is for the weak. I always calculate my decisions by making a cost-benefit analysis of the
+                available options. Putting the benefit to the cost of the decision helps me greatly in breaking down the
+                toughness of the decision and allows me to weigh the pros and cons easily.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Do you have a problem if we relocate you?">Do you have a problem if we relocate you?
+              </summary>
+              <p class="faq-content">
+                Answer:<br>
+                I’ve always had an urge to travel the world since my childhood. So, I don’t think relocation will be a
+                major problem. It will be an adventure that I will look forward to. Though I will miss my family and
+                friends back in my hometown, the internet world has made it easy to stay connected from any part of the
+                country.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Would you be willing to work overtime during nights and sometimes on weekends?">Would you
+                be willing to work overtime during nights and sometimes on weekends?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Like I have said, I always complete all the tasks assigned to me with due diligence. And if those tasks
+                sometimes need me to come in on the weekend, I will not hesitate as my priority is always good quality
+                work.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Can you handle work under pressure?">Can you handle work under pressure?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I have always loved playing the ___________(instrument). I love it so much that I do not even panic or
+                come under stress when playing to a large crowd. This is because I love playing the __________.
+                Similarly, I love working in ____________ (sales/marketing/etc), so I will never feel under pressure. If
+                we love what we do, the pressure doesn’t affect us as it does to those who don’t love what they do.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How would you differentiate between confidence and overconfidence?">How would you
+                differentiate between confidence and overconfidence?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I believe confidence is the trust we have within ourselves and our ability to complete a task.
+                Overconfidence is the ego within us that surfaces when we think too highly of ourselves and begin to
+                exaggerate our abilities.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What do you think is creativity?">What do you think is creativity?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Creativity, I believe, is in each one of us, from the drawing of a car by a 3-year-old to the famed
+                Michelangelo of the Sistine Chapel. Creativity comes to us the minute we open our eyes and see the world
+                as we only fixate on what attracts our attention.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Tell us about your hobbies and interests outside of work.">Tell us about your hobbies and
+                interests outside of work.</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I am an avid reader and love reading _________ (author). Also, I a a big movie buff and try to catch the
+                latest film in the theatres every Sunday with my friends and family. I am also a swimmer and love to
+                relax by the pool on a sunny day.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle criticism?">How do you handle criticism?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Criticism, I believe, is a stepping stone to success. I listen carefully to criticism, analyze it, and
+                take the constructive part of it to better my work. I have always thought of criticism as an opportunity
+                to learn and improve.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What do you do when you disagree with a colleague at work?">What do you do when you
+                disagree with a colleague at work?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                When I disagree with a colleague, I make sure to have a constructive conversation with them. I believe
+                that differences in opinions can lead to creative solutions, and I value diverse perspectives. So, I
+                express my point of view, listen to theirs, and try to find a middle ground that benefits the team and
+                the project.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle a difficult or irate customer?">How do you handle a difficult or irate
+                customer?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I have faced challenging situations with customers in my previous role. I always start by listening
+                actively to their concerns, empathizing with their situation, and assuring them that I am there to help.
+                I remain calm and patient, even in the face of anger, and try to find a solution that meets their needs
+                while aligning with company policies. If needed, I involve a supervisor or manager to ensure the
+                customer's issue is addressed appropriately.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Tell me about a time when you had to meet a tight deadline.">Tell me about a time when you
+                had to meet a tight deadline.</summary>
+              <p class="faq-content">
+                Answer:<br>
+                In my previous internship at __________ (Company Name), we had a project with a very tight deadline. We
+                were tasked with developing a marketing campaign for a new product launch, and the timeline was only two
+                weeks. To meet this deadline, I organized the team, delegated tasks based on each team member's
+                strengths, and established clear communication channels. We worked long hours, including weekends, and I
+                personally ensured that all pieces of the campaign were on track. In the end, we not only met the
+                deadline but also received positive feedback from the client for our creativity and efficiency.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you stay updated with the latest industry trends and developments?">How do you stay
+                updated with the latest industry trends and developments?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I am a firm believer in continuous learning. To stay updated with the latest industry trends and
+                developments, I regularly read industry-specific publications, follow influential thought leaders on
+                social media, and participate in online forums and webinars related to my field. I also make it a point
+                to attend relevant conferences and networking events when possible. This proactive approach helps me
+                remain informed and adapt to changes in the industry.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What is your approach to time management?">What is your approach to time management?
+              </summary>
+              <p class="faq-content">
+                Answer:<br>
+                Time management is crucial to me, and I follow a structured approach to ensure productivity. I start my
+                day by creating a to-do list, prioritizing tasks based on importance and deadlines. I use time
+                management tools and techniques such as the Pomodoro technique to stay focused and avoid distractions.
+                Regularly reviewing and adjusting my schedule helps me stay on track and meet deadlines effectively.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle a situation when a project is not going as planned?">How do you handle a
+                situation when a project is not going as planned?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                When a project is not going as planned, I believe in addressing the issues promptly and transparently. I
+                gather the team to assess the situation, identify the challenges, and brainstorm alternative solutions.
+                I also communicate with stakeholders to manage their expectations and provide regular updates on the
+                revised timeline or any necessary adjustments. The key is to remain flexible, adapt to changes, and
+                collaborate with the team to overcome obstacles and ensure project success.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Tell me about a time when you had to work on a team project.">Tell me about a time when
+                you had to work on a team project.</summary>
+              <p class="faq-content">
+                Answer:<br>
+                One memorable team project I worked on was during my college days when we were assigned a group research
+                project on the impact of digital marketing on consumer behavior. Our team of five students had diverse
+                skills and backgrounds. To ensure effective collaboration, we defined clear roles and responsibilities
+                for each team member, set regular meetings to track progress, and used project management tools to stay
+                organized. Despite facing challenges, such as conflicting ideas and tight deadlines, we successfully
+                completed the project, and our research findings received recognition from our professors.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle stress and pressure in the workplace?">How do you handle stress and
+                pressure in the workplace?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I manage stress and pressure through a combination of organization, time management, and self-care. When
+                faced with a high-pressure situation, I break down tasks into manageable steps, set realistic goals, and
+                prioritize effectively. I also maintain open communication with my team, seeking support and delegating
+                tasks when necessary. Additionally, I practice stress-relief techniques like deep breathing, meditation,
+                and regular exercise to stay balanced and focused.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle constructive feedback?">How do you handle constructive feedback?
+              </summary>
+              <p class="faq-content">
+                Answer:<br>
+                I welcome constructive feedback as an opportunity for growth and improvement. When receiving feedback, I
+                listen attentively, ask clarifying questions to fully understand the points raised, and express
+                gratitude for the input. I take notes and reflect on the feedback, identifying specific actions I can
+                take to address any areas of improvement. It's essential for me to view feedback as a valuable resource
+                for personal and professional development.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Tell me about a challenging situation you faced at work and how you resolved it.">Tell me
+                about a challenging situation you faced at work and how you resolved it.</summary>
+              <p class="faq-content">
+                Answer:<br>
+                In my previous role at __________ (Company Name), I encountered a challenging situation when a major
+                client expressed dissatisfaction with our services due to a miscommunication. The client was on the
+                verge of terminating the contract, which could have had significant financial implications for our
+                company. To resolve this, I immediately scheduled a meeting with the client to understand their concerns
+                and acknowledge the issue. I then collaborated with our internal team to devise a comprehensive solution
+                that addressed the client's needs and exceeded their expectations. Through effective communication,
+                transparency, and swift action, we not only retained the client but also strengthened our relationship,
+                resulting in increased business opportunities.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you prioritize tasks when you have multiple assignments to complete?">How do you
+                prioritize tasks when you have multiple assignments to complete?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Prioritizing tasks is crucial in managing multiple assignments. I use a combination of urgency and
+                importance to determine priorities. I identify critical deadlines and essential deliverables, ensuring
+                that high-priority tasks receive immediate attention. Additionally, I consider the impact of each task
+                on the overall project or organization and allocate time accordingly. Regularly revisiting and adjusting
+                priorities as needed helps me maintain efficiency and meet deadlines effectively.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What do you consider your greatest achievement so far?">What do you consider your greatest
+                achievement so far?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                My greatest achievement so far has been __________ (mention an achievement relevant to the job you're
+                applying for). During my time at ________ (mention the organization or context), I had the opportunity
+                to lead a project that __________ (describe the project and its impact). This achievement not only
+                enhanced my skills but also contributed significantly to the organization's success. It was a testament
+                to my dedication, teamwork, and ability to deliver results even in challenging situations.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="How do you handle tight deadlines and heavy workloads?">How do you handle tight deadlines
+                and heavy workloads?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Handling tight deadlines and heavy workloads requires effective time management and organization. I
+                start by breaking down tasks into smaller, manageable steps and create a detailed schedule to allocate
+                time for each task. Prioritization is key, and I focus on high-impact tasks first. I also communicate
+                with my team to ensure everyone is aligned and can support one another when necessary. Additionally, I
+                remain adaptable and flexible, making adjustments as needed to meet deadlines without compromising on
+                quality.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What do you know about our company?">What do you know about our company?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                I've done extensive research on your company and am impressed by your commitment to innovation, customer
+                satisfaction, and industry leadership. Your company's core values align with my own professional values,
+                and I am excited about the opportunity to contribute to your team. I also noticed that your recent
+                projects, such as __________ (mention recent projects or achievements), have received positive attention
+                and recognition within the industry, which further reinforces my interest in joining your organization.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="What role do you typically play in a team, and how do you contribute to team success?">
+                What role do you typically play in a team, and how do you contribute to team success?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                In a team, I often take on a collaborative and supportive role. I believe in open communication, active
+                listening, and fostering a positive team dynamic. I contribute by sharing ideas, providing constructive
+                feedback, and helping team members when they face challenges. My goal is to ensure that everyone's
+                strengths are utilized, and we collectively work towards achieving our objectives. I value teamwork and
+                believe that a cohesive team is essential for success.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Tell me about a time when you faced a setback or failure at work and how you handled it.">
+                Tell me about a time when you faced a setback or failure at work and how you handled it.</summary>
+              <p class="faq-content">
+                Answer:<br>
+                One significant setback I experienced at work was when __________ (describe the situation or project
+                that led to the setback). Despite thorough planning and effort, the project did not yield the expected
+                results, and it was a challenging moment for our team. To address this, I initiated a post-project
+                review, where we analyzed the root causes of the setback, identified areas for improvement, and
+                developed a plan to prevent similar issues in the future. I also took personal responsibility for my
+                role in the project and committed to learning from the experience. Through resilience, adaptability, and
+                a focus on continuous improvement, our team successfully recovered from the setback and achieved better
+                outcomes in subsequent projects.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Where do you see yourself in five years?">Where do you see yourself in five years?
+              </summary>
+              <p class="faq-content">
+                Answer:<br>
+                In five years, I envision myself in a leadership position within the company, where I can leverage my
+                skills and experiences to contribute to the organization's growth and success. I am committed to
+                continuous learning and development, and I plan to expand my knowledge and expertise in areas such as
+                __________ (mention relevant skills or areas). Ultimately, I aspire to make a significant impact within
+                the company and continue my professional growth as a dedicated and results-driven professional.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary title="Do you have any questions for us?">Do you have any questions for us?</summary>
+              <p class="faq-content">
+                Answer:<br>
+                Yes, I do have a few questions. Firstly, I would like to know more about the specific expectations and
+                goals for this role. Additionally, could you describe the team dynamics and the opportunities for
+                professional growth within the company? Lastly, what are the next steps in the interview process and the
+                expected timeline for a decision? These insights would help me better understand the role and align my
+                aspirations with the company's objectives.
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <script src="frquently_hr.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3  border-top mt-auto">
+    <div class="col-md-4 d-flex align-items-center">
+
+      <span class="text-muted">© AptiTest 2023</span>
+    </div>
+    <span class="text-muted">Version 0.1.5</span>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="/"><svg class="bi" width="24" height="24">
+            <use xlink:href="#twitter"></use>
+          </svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="https://instagram.com/aptitest?igshid=MzRlODBiNWFlZA=="><svg
+            class="bi" width="24" height="24">
+            <use xlink:href="#instagram"></use>
+          </svg></a></li>
+      <li class="ms-3"><a class="text-muted" href="/"><svg class="bi" width="24" height="24">
+            <use xlink:href="#facebook"></use>
+          </svg></a></li>
+    </ul>
+  </footer>
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/645e45e9ad80445890ec99d4/1h08426rv';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.3/dist/sweetalert2.min.js"></script>
+  <!-- sweet alert -->
+  <!-- logout code -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-analytics.js";
+    import {
+      getDatabase,
+      set,
+      ref,
+      update,
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+    import {
+      getAuth,
+      createUserWithEmailAndPassword,
+      signInWithEmailAndPassword,
+      onAuthStateChanged,
+      GoogleAuthProvider,
+      signOut,
+      signInWithPopup,
+    } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAdAo7h2gVigdL0NYkK2hcKEYI7UjTYbtY",
+      authDomain: "aptitest-4fa07.firebaseapp.com",
+      databaseURL: "https://aptitest-4fa07-default-rtdb.firebaseio.com",
+      projectId: "aptitest-4fa07",
+      storageBucket: "aptitest-4fa07.appspot.com",
+      messagingSenderId: "555439862885",
+      appId: "1:555439862885:web:bf54ae8dc265d5bc99428c",
+      measurementId: "G-W8XFYM79Y8",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const database = getDatabase(app);
+    const auth = getAuth();
+
+    logout.addEventListener("click", (e) => {
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          //alert("Logout successfull");
+          Swal.fire({
+            title: "AptiTest",
+            text: "Logout successfull",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+          window.location.href = "index.html";
+
+        })
+        .catch((error) => {
+          // An error happened.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          var error = errorMessage.split("Firebase:")[1].trim();
+          //alert(errorMessage);
+          Swal.fire({
+            title: "AptiTest",
+            text: error,
+            icon: "error",
+            confirmButtonText: "OK",
+          });
+        });
+    });
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        const Name = user.displayName;
+        const email = user.email;
+        var name = document.getElementById("username");
+        const profileImageURL = user.photoURL;
+        var profileImageElement = document.getElementById("profile-image");
+        if (profileImageURL != null) {
+          profileImageElement.src = profileImageURL;
+        }
+        else {
+          profileImageElement.src = "https://media.istockphoto.com/id/1130884625/vector/user-member-vector-icon-for-ui-user-interface-or-profile-face-avatar-app-in-circle-design.jpg?s=612x612&w=0&k=20&c=1ky-gNHiS2iyLsUPQkxAtPBWH1BZt0PKBB1WBtxQJRE=";
+        }
+        // console.log(Name);
+        // console.log(email);
+
+        if (Name != null) {
+          name.textContent = Name;
+        }
+        else {
+          name.textContent = email;
+        }
+
+
+        // ...
+      } else {
+        // User is signed out
+        // ...
+        window.location.href = "index.html";
+      }
+    });
+  </script>
+</body>
+
+</html>
