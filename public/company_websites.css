@@ -1,0 +1,16 @@
+.head {
+  color: #7048e8;
+  font-weight: 700;
+}
+.head1 {
+  color: #1c7ed6;
+  font-weight: 500;
+}
+.lik:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.like {
+  padding-top: 15px;
+  background-color: #d0bfff;
+}
